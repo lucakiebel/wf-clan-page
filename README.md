@@ -1,6 +1,6 @@
 # WF-Clan-Page
 
-This is a Modal Warframe Clan Wesbite Template for Clans of any size! Some of it's features are:
+This is a Modal Warframe Clan Website Template for Clans of any size! Some of it's features are:
 
   - Bootstrapped html for maximum compatibility
   - Fully Documented config.php for easy adaptation
@@ -11,7 +11,7 @@ Open Alpha 1.0
 
 ### Installation
 
-The Website requires [PHP](php.net) Version 5.4+ to run.
+The Website requires [PHP](http://php.net) Version 5.4+ to run.
 
 If you have your Wesbite hosted somewhere simply Upload all the Files to your FTP-Server or transfer them using other managemant options avaiable to you!
 
@@ -29,12 +29,12 @@ $ service apache2 restart
 Want to contribute? Great!
 
 We use standard HTML and PHP so you don't need any extra Tools to help!
-You simply need a Texteditor like [Atom](atom.io) or [Notepad++](notepad-plus-plus.org)
+You simply need a Texteditor like [Atom](http://atom.io) or [Notepad++](http://notepad-plus-plus.org)
 
 License
 ----
 
-MIT
+GNU GPL v3
 
 
 **Free Software, Hell Yeah!**

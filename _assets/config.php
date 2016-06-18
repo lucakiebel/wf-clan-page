@@ -32,8 +32,29 @@
 
     $wf_warlord_imgs                = array("http://i.imgur.com/9xP6HRN.png", "http://i.imgur.com/W2njPgi.png");
 
+    $wf_application_fields          = array("<label><span>Your Tenno Alias</span><input type=\"text\" name=\"name\"></label>",
+                                             "<label><span>Your Age</span><input type=\"number\" name=\"age\"></label>",
+                                                "<label><span>Teampeak?</span><input type=\"checkbox\" name=\"ts\"></label>");
+                                                                                            // This is used in the Application Form. You can choose to set more fields/questions for applications. For ease of use, types are [text/number/checkbox]
+
     //constants, don't change 'em
     $alertFeed_pc                   = "http://content.warframe.com/dynamic/rss.php";        // Used in the Alert Section for PC Alerts
     $alertFeed_ps4                  = "http://content.ps4.warframe.com/dynamic/rss.php";    // Used in the Alert Section for PS4 Alerts
     $alertFeed_xb1                  = "http://content.xb1.warframe.com/dynamic/rss.php";    // Used in the Alert Section for XB1 Alerts
     $alertFeed_worldState           = "http://content.warframe.com/dynamic/worldState.php"; // Used for fetching news and the Void Trader stuff in the 3rd column 
+
+
+
+    /*
+     * other Stuff, IMPORTANT!!!1111oneone
+     *
+     * If you have a valid SSL Certificate, in the .htaccess add
+     *  RewriteEngine On
+        RewriteCond %{HTTPS} !=on
+        RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+     * so that the Server always uses https
+     * if you don't have one, leave it out as it will route all incoming connections to /dev/null which is bad :P
+     *
+     * some of the PHP in here requires the Server to reload the PHP Init Files, if you have SSH Control over
+     * the server simply use the Command "$ sudo service apache2 restart", and if you don't just wait for <1d for the Server to do this on it's own
+    */
