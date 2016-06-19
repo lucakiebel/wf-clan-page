@@ -1,8 +1,12 @@
 <?php
     //style and backend
+    $website_ready                  = "false";                                              // Change this Boolean to true if you are done working on your website, this will remove the Warning on the Website's top
     $domain_name                    = "your-warframe-clan.com";                             // Your Clan's Fully Qualified Domain Name (FQDN) (if you host it on a Subdomain e.g. your-clan.warframe-clans.com, then that's your FQDN)
     //$css_own_link                   = "../css/own.css";                                   // If you want to add own styles remove the two slashes in front of this line and add your stylesheets link here, if not, then don't ^^
     //$js_own_link                    = "../js/own.js";                                     // If you want to add own functions remove the two slashes in front of this line and add your js file link here, if not, then don't :P
+    $bs_css_link                    = "https://luca-kiebel.de/css/bootstrap.min.css";       // Bootstrap CSS Link, change this if you want Support for newer BS Versions
+    $bs_js_link                     = "https://luca-kiebel.de/js/bootstrap.min.js";         // Bootstrap JS Link, change this if you want Support for newer BS Versions
+    $bs_jq_link                     = "https://luca-kiebel.de/js/jquery.min.js";            // Bootstrap JQuery Link, change this if you want Support for newer BS Versions
 
     //head.php settings
     $website_head_name              = "Your Warframe Clan";                                 // Your Clan's Name (used in Header and Title)
@@ -12,9 +16,9 @@
     $website_foot_copyright         = "&copy; Your Warframe Clan 2015-2016";                // Your Clan's Copyright Notice
 
     //nav.php settings
-    $website_nav_menu1              = "Menu 1";                                             // The first menu's name
-    $website_nav_menu2              = "Menu 2";                                             // The second menu's name
-    $website_nav_dropdown           = "Dropdown";                                           // Dropdown menu's name
+    $website_nav_menu1              = "Menu 1";                                             // The first menu's name used in the Menu bar
+    $website_nav_menu2              = "Menu 2";                                             // The second menu's name..
+    $website_nav_dropdown           = "Dropdown";                                           // Dropdown menu's name..
     $website_nav_dropdown_inner1    = "Inner Menu 1";                                       // >∨
     $website_nav_dropdown_inner2    = "Inner Menu 2";                                       // The dropped down menu names
     $website_nav_dropdown_inner3    = "Inner Menu 3";                                       // >∧
@@ -32,9 +36,9 @@
 
     $wf_warlord_imgs                = array("http://i.imgur.com/9xP6HRN.png", "http://i.imgur.com/W2njPgi.png");
 
-    $wf_application_fields          = array("<label><span>Your Tenno Alias</span><input type=\"text\" name=\"name\"></label>",
+    $wf_application_fields          = ["<label><span>Your Tenno Alias</span><input type=\"text\" name=\"name\"></label>",
                                              "<label><span>Your Age</span><input type=\"number\" name=\"age\"></label>",
-                                                "<label><span>Teampeak?</span><input type=\"checkbox\" name=\"ts\"></label>");
+                                                "<label><span>Teampeak?</span><input type=\"checkbox\" name=\"ts\"></label>"];
                                                                                             // This is used in the Application Form. You can choose to set more fields/questions for applications. For ease of use, types are [text/number/checkbox]
 
     //constants, don't change 'em
@@ -53,7 +57,7 @@
         RewriteCond %{HTTPS} !=on
         RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
      * so that the Server always uses https
-     * if you don't have one, leave it out as it will route all incoming connections to /dev/null which is bad :P
+     * if you don't have one, leave it out as it will route all incoming connections to port 443 and the server won't take any connections at that port which is bad :P
      *
      * some of the PHP in here requires the Server to reload the PHP Init Files, if you have SSH Control over
      * the server simply use the Command "$ sudo service apache2 restart", and if you don't just wait for <1d for the Server to do this on it's own
