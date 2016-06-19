@@ -5,7 +5,7 @@ This is a Modal Warframe Clan Website Template for Clans of any size! Some of it
   - [Bootstrapped](http://getbootstrap.com/) html for maximum compatibility
   - Fully Documented config.php for easy adaptation
   - Magic
-  - Blog function (Comming in Alpha 1.3)
+  - Blog function (Coming in Alpha 1.3)
 
 ### Version
 Open Alpha 1.2
@@ -27,7 +27,7 @@ $ service apache2 restart
 
 ### Development
 
-Want to contribute? Great!
+Want to contribute? Nice!
 
 We use standard HTML and PHP so you don't need any extra Tools to help!
 You simply need a Texteditor like [Atom](http://atom.io) or [Notepad++](http://notepad-plus-plus.org)
@@ -37,5 +37,18 @@ License
 
 GNU GPL v3
 
+made by [@lucakiebel](http://twitter.com/lucakiebel)
 
-**Free Software, Hell Yeah!**
+
+**Free Design, Hell Yeah!**
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+
+   [dill]: <https://github.com/joemccann/dillinger>
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [keymaster.js]: <https://github.com/madrobby/keymaster>
+   [jQuery]: <http://jquery.com>
+   [express]: <http://expressjs.com>
+   [AngularJS]: <http://angularjs.org>
+   [Gulp]: <http://gulpjs.com>

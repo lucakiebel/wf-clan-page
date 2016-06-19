@@ -1,12 +1,26 @@
 <?php
+
+// TODO put all of this in /install/install.php and make a nice Frontend ^^ 
+
+
+/*
+ * Hi there!
+ * Let me first introduce this File;
+ * this is the config.php, used to configure everything from your Clan's name to your very own Blog.
+ * If you want to change stuff here, which I highly recommend, only change the Text inside of the quotes after the equal-signs.
+ * 
+ */
+
+
     //style and backend
-    $website_ready                  = "false";                                              // Change this Boolean to true if you are done working on your website, this will remove the Warning on the Website's top
+    $website_ready                  = false;                                                // Change this Boolean to true if you are done working on your website, this will remove the Warning on the Website's top
     $domain_name                    = "your-warframe-clan.com";                             // Your Clan's Fully Qualified Domain Name (FQDN) (if you host it on a Subdomain e.g. your-clan.warframe-clans.com, then that's your FQDN)
     //$css_own_link                   = "../css/own.css";                                   // If you want to add own styles remove the two slashes in front of this line and add your stylesheets link here, if not, then don't ^^
     //$js_own_link                    = "../js/own.js";                                     // If you want to add own functions remove the two slashes in front of this line and add your js file link here, if not, then don't :P
     $bs_css_link                    = "https://luca-kiebel.de/css/bootstrap.min.css";       // Bootstrap CSS Link, change this if you want Support for newer BS Versions
     $bs_js_link                     = "https://luca-kiebel.de/js/bootstrap.min.js";         // Bootstrap JS Link, change this if you want Support for newer BS Versions
     $bs_jq_link                     = "https://luca-kiebel.de/js/jquery.min.js";            // Bootstrap JQuery Link, change this if you want Support for newer BS Versions
+    $site_admin_email               = "postmaster@$domain_name";                            // You are Required to have a Postmaster Contact for Queries and Error reporting. TODO make a contact form for reporting local errors
 
     //head.php settings
     $website_head_name              = "Your Warframe Clan";                                 // Your Clan's Name (used in Header and Title)
@@ -16,7 +30,7 @@
     $website_foot_copyright         = "&copy; Your Warframe Clan 2015-2016";                // Your Clan's Copyright Notice
 
     //nav.php settings
-    $website_nav_menu1              = "Menu 1";                                             // The first menu's name used in the Menu bar
+    $website_nav_menu1              = "Menu 1";                                             // The first menu's name used in the Menu bar TODO make it an array!
     $website_nav_menu2              = "Menu 2";                                             // The second menu's name..
     $website_nav_dropdown           = "Dropdown";                                           // Dropdown menu's name..
     $website_nav_dropdown_inner1    = "Inner Menu 1";                                       // >∨
@@ -45,20 +59,22 @@
     $alertFeed_pc                   = "http://content.warframe.com/dynamic/rss.php";        // Used in the Alert Section for PC Alerts
     $alertFeed_ps4                  = "http://content.ps4.warframe.com/dynamic/rss.php";    // Used in the Alert Section for PS4 Alerts
     $alertFeed_xb1                  = "http://content.xb1.warframe.com/dynamic/rss.php";    // Used in the Alert Section for XB1 Alerts
-    $alertFeed_worldState           = "http://content.warframe.com/dynamic/worldState.php"; // Used for fetching news and the Void Trader stuff in the 3rd column 
+    $alertFeed_worldState           = "http://content.warframe.com/dynamic/worldState.php"; // Used for fetching news and the Void Trader stuff in the 3rd column
+    $wf_application_field_size      = sizeof($wf_application_fields);                       // Used to display the Application-Form Correctly   TODO make them Constants!
 
 
 
-    /*
-     * other Stuff, IMPORTANT!!!1111oneone
-     *
-     * If you have a valid SSL Certificate, in the .htaccess add
-     *  RewriteEngine On
-        RewriteCond %{HTTPS} !=on
-        RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-     * so that the Server always uses https
-     * if you don't have one, leave it out as it will route all incoming connections to port 443 and the server won't take any connections at that port which is bad :P
-     *
-     * some of the PHP in here requires the Server to reload the PHP Init Files, if you have SSH Control over
-     * the server simply use the Command "$ sudo service apache2 restart", and if you don't just wait for <1d for the Server to do this on it's own
-    */
+/*
+ * other Stuff, IMPORTANT!!!1111oneone
+ *
+ * If you have a valid SSL Certificate, in the .htaccess add
+ *  RewriteEngine On
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ * so that the Server always uses https
+ * if you don't have one, leave it out as it will route all incoming connections to port 443 and the server won't take any connections at that port which is bad :P
+ *
+ * some of the PHP in here requires the Server to reload the PHP Init Files, if you have SSH Control over
+ * the server and it uses Apache simply use the Command "$ sudo service apache2 restart", and if you don't just wait for <1d for the Server to do this on it's own
+*/
+
