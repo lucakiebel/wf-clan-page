@@ -1,6 +1,6 @@
 <?php
 
-// TODO put all of this in /install/install.php and make a nice Frontend ^^ 
+// TODO put all of this in /admin/install.php and make a nice Frontend ^^ 
 
 
 /*
@@ -14,20 +14,21 @@
 
     //style and backend
     $website_ready                  = false;                                                // Change this Boolean to true if you are done working on your website, this will remove the Warning on the Website's top
+    $website_ssl                    = "false";                                              // Change to true if you have an Active SSL Certificate
     $domain_name                    = "your-warframe-clan.com";                             // Your Clan's Fully Qualified Domain Name (FQDN) (if you host it on a Subdomain e.g. your-clan.warframe-clans.com, then that's your FQDN)
     //$css_own_link                   = "../css/own.css";                                   // If you want to add own styles remove the two slashes in front of this line and add your stylesheets link here, if not, then don't ^^
     //$js_own_link                    = "../js/own.js";                                     // If you want to add own functions remove the two slashes in front of this line and add your js file link here, if not, then don't :P
-    $bs_css_link                    = "https://luca-kiebel.de/css/bootstrap.min.css";       // Bootstrap CSS Link, change this if you want Support for newer BS Versions
-    $bs_js_link                     = "https://luca-kiebel.de/js/bootstrap.min.js";         // Bootstrap JS Link, change this if you want Support for newer BS Versions
-    $bs_jq_link                     = "https://luca-kiebel.de/js/jquery.min.js";            // Bootstrap JQuery Link, change this if you want Support for newer BS Versions
     $site_admin_email               = "postmaster@$domain_name";                            // You are Required to have a Postmaster Contact for Queries and Error reporting. TODO make a contact form for reporting local errors
+
 
     //head.php settings
     $website_head_name              = "Your Warframe Clan";                                 // Your Clan's Name (used in Header and Title)
-    $website_head_pagename          = "Clan Website";                                       // Words behind the vertical bar in the Title
+    $website_head_page              = "Clan Website";                                       // Words behind the vertical bar in the Title
+
 
     //foot.php settings
     $website_foot_copyright         = "&copy; Your Warframe Clan 2015-2016";                // Your Clan's Copyright Notice
+
 
     //nav.php settings
     $website_nav_menu1              = "Menu 1";                                             // The first menu's name used in the Menu bar TODO make it an array!
@@ -36,6 +37,16 @@
     $website_nav_dropdown_inner1    = "Inner Menu 1";                                       // >∨
     $website_nav_dropdown_inner2    = "Inner Menu 2";                                       // The dropped down menu names
     $website_nav_dropdown_inner3    = "Inner Menu 3";                                       // >∧
+
+
+    //imprint page settings
+    $imp_owner_name                 = "Your Real Name";                                     // Law requires you to give your real name in imprints
+    $imp_owner_email                = "you@$domain_name";                                   // Law requires you to give your real email address in imprints
+    $imp_owner_address_street       = "Your Street, Your House number";                     // Law requires you to give your real address in imprints
+    $imp_owner_address_town_zip     = "Your Zip, your Town";                                // Law requires you to give your real address in imprints
+
+
+
 
 
     //warframe settings
@@ -54,6 +65,7 @@
                                              "<label><span>Your Age</span><input type=\"number\" name=\"age\"></label>",
                                                 "<label><span>Teampeak?</span><input type=\"checkbox\" name=\"ts\"></label>"];
                                                                                             // This is used in the Application Form. You can choose to set more fields/questions for applications. For ease of use, types are [text/number/checkbox]
+
 
     //constants, don't change 'em
     $alertFeed_pc                   = "http://content.warframe.com/dynamic/rss.php";        // Used in the Alert Section for PC Alerts
