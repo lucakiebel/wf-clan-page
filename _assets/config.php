@@ -75,6 +75,12 @@
     $alertFeed_worldState           = "http://content.warframe.com/dynamic/worldState.php"; // Used for fetching news and the Void Trader stuff in the 3rd column
     $wf_application_field_size      = sizeof($wf_application_fields);                       // Used to display the Application-Form Correctly   TODO make them Constants!
 
+    //database settings
+    $db_name                        = "db";
+    $db_server                      = "localhost";
+    $db_user                        = "blog";
+    $db_passwd                      = "passwd";
+
 
 
 /*
