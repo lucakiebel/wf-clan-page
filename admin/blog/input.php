@@ -1,7 +1,3 @@
-<?php
-require_once '../../_assets/config.php';
-?>
-
 <div class="blogInput" id="entry">
     <form class="blogEntry" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         <label><span>Entry Title</span><input type="text" name="entry_title" placeholder="Topic:Data"></label>
@@ -12,6 +8,10 @@ require_once '../../_assets/config.php';
 </div>
 
 <?php
+
+
+require_once '../../_assets/config.php';
+
 $entry_title = $entry_summary = $entry_body = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -27,6 +27,12 @@ function input_testen($data){
     return $data;
 }
 
+
 require_once '../../_assets/includes/dbconnect.php';
+connectDatabase("INSERT INTO MyBlog (entry_title, entry_summary, entry_body)
+VALUES ('".$conn->quote($entry_title)."', '".$conn->quote($entry_summary)."', '".$conn->quote($entry_body)."')");
+
+
+
 
 

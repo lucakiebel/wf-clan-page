@@ -87,3 +87,12 @@ function input_testen($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
+
+require_once '../../../_assets/includes/dbconnect.php';
+connectDatabase("CREATE TABLE MyBlog (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+entry_title VARCHAR(255) NOT NULL,
+entry_summary TEXT(1500) NOT NULL,
+entry_body TEXT(18000) NOT NULL,
+post_date TIMESTAMP 
+)");
