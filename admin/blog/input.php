@@ -27,4 +27,6 @@ function input_testen($data){
     return $data;
 }
 
+require_once '../../_assets/includes/dbconnect.php';
+
 
