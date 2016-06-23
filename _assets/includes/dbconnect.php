@@ -12,8 +12,8 @@ function connectDatabase($query)
 
         $conn->exec($sql);
 
-    } catch (PDOException $exeption) {
-        echo "Connection failed: " . $exeption->getMessage();
+    } catch (PDOException $exception) {
+        echo "Connection failed: " . $exception->getMessage();
     }
 
     $conn = null;
