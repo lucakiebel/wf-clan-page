@@ -6,7 +6,7 @@ function header($head_name, $header_name){
     echo "<meta http-equiv=\"cache-control\" content=\"no-cache\" />";
     echo "<title>$head_name | $header_name</title>";
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">";
-    echo "<link rel=\"icon\" type=\"image/png\" href=\"/img/logo/favicon/logo.png\">";
+    echo "<link rel=\"icon\" type=\"image/png\" href=\"$wf_clan_thumb\">";
     echo "<link rel=\"stylesheet\" href=\"https://luca-kiebel.de/css/bootstrap.min.css\">";
     echo "<link rel=\"stylesheet\" href=\"../../css/main.css.php\">";
         if(isset($css_own_link)){

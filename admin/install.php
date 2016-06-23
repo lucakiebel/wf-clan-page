@@ -4,7 +4,7 @@
 
 <head>
     <?php require_once '../_assets/includes/head.php';
-    header($website_head_name, "Installation");
+    header( "Admin" , "Installation");
     ?>
 </head>
 <body>

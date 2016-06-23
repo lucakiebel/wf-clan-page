@@ -55,6 +55,7 @@
     $wf_application_type            = "join";                                               // [join/apply] Whether you want players to apply or not (mostly used by Event Clans)
     $wf_clan_logo                   = "http://i.imgur.com/ctbz62h.png";                     // Your clan logo (can also be an internal link like "/img/logo/logo.png" but has to end with a picture file extension)
     $wf_clan_logo_clicked           = "../../img/logo/lotus/navbar-brand-active.png";       // Your clan logo if hovered over it with the mouse pointer (I took a grey one as base and this one is white)
+    $wf_clan_thumb                  = "../../img/logo/favicon/logo.png";                    // Your Clan's Thumb/Shortcut-Icon/Favicon
     //$wf_clan_trailer_mp4_link       = "";                                                 // Enter the URL of your Clan's trailer if you have one and remove the two slashes in front of this line (only with valid streamable video file extension (e.g. .mp4, .wmv, ...))
     //$wf_clan_trailer_yt_link        = "";                                                 // Enter the full YouTube Link to your Clan's trailer if you have remove the two slashes in front of this line one (and, yes, you guessed it, only youtube links this time ;) )
     $wf_warlord_names               = array("name1", "name2");                              // Enter the Names of your Clan Leaders / Warlords and their respective profile pictures in the same order in the next array, you can find the pics in the Forums
