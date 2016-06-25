@@ -13,7 +13,7 @@ Open Alpha 1.2.7
 
 ### Installation
 
-The Website requires [PHP](http://php.net) Version 5.4+, [Apache](http://apache.org) and [MySQL](mysql.com) on a Linux Server (e.g. [LAMP bundle](https://en.wikipedia.org/wiki/LAMP_(software_bundle) ) to run.
+The Website requires [PHP](http://php.net) Version 5.4+, [Apache](http://apache.org) and [MySQL](mysql.com) on a Linux Server (e.g. [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) bundle) to run.
 
 If you have your Wesbite hosted somewhere simply Upload all the Files to your FTP-Server or transfer them using other managemant options avaiable to you!
 
