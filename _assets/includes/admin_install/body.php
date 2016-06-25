@@ -4,19 +4,23 @@ require_once '../../../_assets/config.php';
 
 
 <?php
-//variablen mit dem Wert Null definieren:
-//website/domain settings
-$domain_name = $website_head_name = $site_admin_email = $website_foot_copyright = "";
-//owner settings
-$imp_owner_name = $imp_owner_email = $imp_owner_address_street = $imp_owner_address_town_zip = "";
-//warframe settings
-$wf_main_console = $wf_application_email = $wf_application_type = $wf_clan_logo = $wf_clan_logo_clicked = $wf_warlord_names = $wf_warlord_imgs = "";
-//application fields settings
-$wf_application_field1 = "";
-$wf_application_field2 = "";
-$wf_application_field3 = "";
-$website_ssl = "";
-$db_server = $db_user = $db_name = $db_passwd = "";
+if (!isset($already_ran_admin_install)) {
+    //variablen mit dem Wert Null definieren:
+    //website/domain settings
+    $domain_name = $website_head_name = $website_ssl = $site_admin_email = $website_foot_copyright = "";
+    //owner settings
+    $imp_owner_name = $imp_owner_email = $imp_owner_address_street = $imp_owner_address_town_zip = "";
+    //warframe settings
+    $wf_main_console = $wf_application_email = $wf_application_type = $wf_clan_logo = $wf_clan_logo_clicked = $wf_warlord_names = $wf_warlord_imgs = "";
+    //application fields settings
+    $wf_application_field1 = "";
+    $wf_application_field2 = "";
+    $wf_application_field3 = "";
+    $website_ssl = "";
+    $htaccess_passwd = $htaccess_user = "";
+    $db_server = $db_user = $db_name = $db_passwd = "";
+}
+$already_ran_admin_install = "set";
 ?>
 
 <form class="recruit" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -24,6 +28,8 @@ $db_server = $db_user = $db_name = $db_passwd = "";
     <label><span>Your Domain Name / Subdomain Name</span><input type="url" name="domain_name" placeholder="your-clan.com"></label>
     <label><span>Your Clan's Name</span><input type="text" name="website_head_name" placeholder="Your Warframe Clan"></label>
     <label><span>Active SSL Certificate?</span><input type="checkbox" name="website_ssl" value="true"></label>
+    <label><span>Admin Username</span><input type="text" name="htaccess_user" placeholder="Username, only Latin Characters"></label>
+    <label><span>Admin Password</span><input type="password" name="htaccess_passwd" placeholder="Password, without slashes or &gt; or &lt;"></label>
     <label><span>Website Admin Email</span><input type="email" name="site_admin_email" placeholder="admin@your-clan.com"></label>
     <label><span>Copyright Notice</span><input type="text" name="website_foot_copyright" placeholder="Content &copy; Your Warframe Clan 2016"></label>
     <hr>
@@ -51,7 +57,9 @@ $db_server = $db_user = $db_name = $db_passwd = "";
     <label><span>Your Databases Username</span><input type="text" name="db_user"></label>
     <label><span>Your Databases Name</span><input type="text" name="db_name"></label>
     <label><span>Your Databases Password</span><input type="password" name="db_passwd"></label>
-    <button class="btn"><input type="submit" value="Save Settings"></button>
+    <div class="alert alert-warning"><a href="#" data-dismiss="alert" aria-label="close">&times;</a> After you commit these changes the Interface will be secured by your Webserver and you will need your Admin Password and Username to Access it.</div>
+
+    <button class="btn btn-primary"><input type="submit" value="Save Settings"></button>
 </form>
 
 <?php
@@ -69,11 +77,13 @@ $db_server = $db_user = $db_name = $db_passwd = "";
         $db_server = input_testen($_POST["db_server"]);
         $db_user = input_testen($_POST["sb_user"]);
         $db_passwd = input_testen($_POST["db_passwd"]);
+        $htaccess_passwd = input_testen($_POST["htaccess_passwd"]);
+        $htaccess_user = input_testen($_POST["htaccess_user"]);
 
     }
 
     if ($website_ssl == "true") {
-        $f = fopen("../../../.htaccess", "a+") or die("Unable to open htaccess file!");
+        $f = fopen("../../../.htaccess", "a+") or die("Unable to open htaccess-File!");
         fwrite($f, '
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
@@ -96,3 +106,11 @@ entry_summary TEXT(1500) NOT NULL,
 entry_body TEXT(18000) NOT NULL,
 post_date TIMESTAMP 
 )");
+
+$htaccess_passwd_secure = crypt($htaccess_passwd, base64_encode($htaccess_passwd));
+
+    if (isset($htaccess_secure)){
+        $f = fopen("../../../.htpasswd", "w+") or die("Unable to make the htpasswd-File!");
+        fwrite($f, "$htaccess_user:$htaccess_passwd_secure");
+        fclose($f);
+    }
