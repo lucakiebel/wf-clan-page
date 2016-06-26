@@ -6,7 +6,7 @@ This is a Modal Warframe Clan Website Template for Clans of any size! Some of it
   - ~~Fully Documented config.php for easy adaptation~~
   - New Admin Frontend for Configuration!
   - Magic
-  - Blog function (Coming in Alpha 1.3)
+  - Blog function with Comments Powered by [DISQUS](http://disqus.com) (Coming in Alpha 1.3)
 
 ### Version
 Open Alpha 1.2.7
