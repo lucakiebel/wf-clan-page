@@ -32,6 +32,7 @@ $already_ran_admin_install = "set";
     <label><span>Admin Password</span><input type="password" name="htaccess_passwd" placeholder="Password, without slashes or &gt; or &lt;"></label>
     <label><span>Website Admin Email</span><input type="email" name="site_admin_email" placeholder="admin@your-clan.com"></label>
     <label><span>Copyright Notice</span><input type="text" name="website_foot_copyright" placeholder="Content &copy; Your Warframe Clan 2016"></label>
+    <label><span>DISQUS Identifier</span><input type="text" name="website_blog_comment" placeholder="yourclan"></label> You need a <a href="http://disqus.com">DISQUS</a> Account for this, The Identifier is the Part of your DISQUS URL you get to choose when creating your Account!
     <hr>
     <h1>Owner Settings:</h1>
     <label><span>The Owner's Real Name</span><input type="text" name="imp_owner_name" placeholder="Hayden Tenno"></label>
@@ -79,6 +80,7 @@ $already_ran_admin_install = "set";
         $db_passwd = input_testen($_POST["db_passwd"]);
         $htaccess_passwd = input_testen($_POST["htaccess_passwd"]);
         $htaccess_user = input_testen($_POST["htaccess_user"]);
+        $disqus_id = input_testen($_POST["website_blog_comment"]);
 
     }
 

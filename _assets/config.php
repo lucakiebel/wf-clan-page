@@ -81,6 +81,10 @@
     $db_user                        = "blog";
     $db_passwd                      = "passwd";
 
+    $htaccess_user                  = "";
+    $htaccess_passwd                = "";
+    $disqus_id                      = "";
+
 
 
 /*
