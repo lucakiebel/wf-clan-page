@@ -30,7 +30,7 @@ $ #Open yourdomain.com/admin in your Browser
 
 Want to contribute? Nice!
 
-We use standard HTML and PHP so you don't need any extra Tools to help!
+I use standard HTML and PHP so you don't need any extra Tools to help!
 You simply need a Texteditor like [Atom](http://atom.io) or [Notepad++](http://notepad-plus-plus.org)
 
 License
